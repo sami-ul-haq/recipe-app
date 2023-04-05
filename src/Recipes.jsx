@@ -5,8 +5,6 @@ const Recipes = () => {
   const [recipeData, setRecipeData] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("chicken");
-  console.log(search);
-  console.log(query);
 
   const APP_ID = "bfc8b0c7";
   const APP_KEY = "3eaec3dbc8690491c0a5246845ec6dc9";
@@ -30,6 +28,7 @@ const Recipes = () => {
   const searchRecipe = (e) => {
     e.preventDefault();
     setQuery(search);
+    setSearch("");
   };
 
   return (
@@ -39,6 +38,7 @@ const Recipes = () => {
           <input
             type="text"
             value={search}
+            placeholder="Search Your Recipe"
             onChange={(e) => setSearch(e.target.value)}
           />
           <button type="submit">Search</button>
